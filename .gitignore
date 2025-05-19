@@ -1,0 +1,30 @@
+# Virtual Environments
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+
+# Docker
+*.pid
+*.tar
+*.bak
+docker-compose.override.yml
+
+
+# Coverage
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+.cache

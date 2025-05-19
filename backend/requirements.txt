@@ -1,0 +1,12 @@
+# Core framework
+fastapi
+uvicorn[standard]
+
+# Async PostgreSQL with SQLAlchemy
+SQLAlchemy>=1.4
+asyncpg
+
+python-dotenv
+pydantic
+pydantic-settings
+
