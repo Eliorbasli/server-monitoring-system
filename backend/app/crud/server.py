@@ -26,6 +26,11 @@ async def create_server(db: AsyncSession, server_in: ServerCreate) -> Server:
 
 async def update_server(db: AsyncSession, server_id: int, server_in: ServerUpdate) -> Optional[Server]:
     update_data = server_in.dict(exclude_unset=True)
+    
+    # Convert ip_add to string if it exists
+    if 'ip_address' in update_data and update_data['ip_address'] is not None:
+        update_data['ip_address'] = str(update_data['ip_address'])
+    
     if not update_data:
         return await get_server_by_id(db, server_id)
     stmt = update(Server).where(Server.id == server_id).values(**update_data)
