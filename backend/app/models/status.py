@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, ForeignKey, DateTime, Enum
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 import enum
-from backend.app.db.base import Base
+from app.db.base import Base
 
 class StatusEnum(str, enum.Enum):
     ONLINE = "online"
