@@ -1,15 +1,15 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from typing import List
-from backend.app.schemas.server import Server, ServerCreate, ServerUpdate
-from backend.app.crud.server import (
+from app.schemas.server import Server, ServerCreate, ServerUpdate
+from app.crud.server import (
     get_server_by_id,
     get_all_servers,
     create_server,
     update_server,
     delete_server,
 )
-from backend.api_service.dependencies import get_db
+from api_service.dependencies import get_db
 
 router = APIRouter()
 

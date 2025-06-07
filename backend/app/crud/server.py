@@ -2,8 +2,8 @@ from typing import List, Optional
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy import update, delete
-from backend.app.models.server import Server
-from backend.app.schemas.server import ServerCreate, ServerUpdate
+from app.models.server import Server
+from app.schemas.server import ServerCreate, ServerUpdate
 
 async def get_server_by_id(db: AsyncSession, server_id: int) -> Optional[Server]:
     result = await db.execute(select(Server).where(Server.id == server_id))

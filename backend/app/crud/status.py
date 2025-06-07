@@ -1,7 +1,7 @@
 from typing import Optional
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-from backend.app.models.status import Status, StatusEnum
+from app.models.status import Status, StatusEnum
 
 async def create_status(db: AsyncSession, server_id: int, status: StatusEnum) -> Status:
     db_status = Status(server_id=server_id, status=status)
