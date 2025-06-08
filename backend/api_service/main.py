@@ -1,9 +1,10 @@
 from fastapi import FastAPI
-from backend.api_service.routers import server, status
-from backend.api_service.logger import setup_logger
-from backend.api_service.dependencies import get_db
-from backend.app.db.session import engine
-from backend.app.db.base import Base
+from api_service.routers import server, status
+from api_service.logger import setup_logger
+from api_service.dependencies import get_db
+from app.models import server, status
+from app.db.session import engine
+from app.db.base import Base
 import uvicorn
 from sqlalchemy.exc import OperationalError
 import asyncio
@@ -15,7 +16,6 @@ app = FastAPI(title="Server Monitoring API")
 setup_logger()
 
 async def init_db():
-    from backend.app.models import server, status
     retries = 10
     delay = 2
     for i in range(retries):
